@@ -240,7 +240,7 @@ var Game = new (function() {
     $(document).on(Utils.touchEnd(), 'html', touchEnd);
 
     function keyPress(event) {
-      var key = String.fromCharCode(event.keyCode).toLowerCase(),
+      var key = String.fromCharCode(event.keyCode || event.charCode).toLowerCase(),
           nr = keyToNr[key] * 1;
       if (!tapToStart && nr > 0) {
         if (scaleBorder)
